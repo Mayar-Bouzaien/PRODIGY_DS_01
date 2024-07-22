@@ -10,7 +10,7 @@ data = pd.read_excel(file_path, sheet_name=sheet_name)
 print(data)
 df = pd.DataFrame(data)
 
-# Plotting Histogram
+# Plotting Histogram for Age Distribution
 plt.figure(figsize=(10, 5))
 n, bins, patches = plt.hist(df['Age'].dropna(), bins=10, edgecolor='black')
 plt.hist(df['Age'].dropna(), bins=10, edgecolor='black')
@@ -21,7 +21,7 @@ for i in range(len(patches)):
     plt.text(patches[i].get_x() + patches[i].get_width() / 2, n[i], int(n[i]), ha='center', va='bottom')
 plt.show()
 
-# Plotting Bar Chart
+# Plotting Bar Chart for Age Distribution
 age_counts = df['Age'].value_counts().sort_index()
 
 plt.figure(figsize=(10, 5))
